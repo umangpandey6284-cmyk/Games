@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Google AI Studio App</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Mock Unity Ads SDK for Web Integration
+      window.UnityAds = {
+        initialized: false,
+        init: function(gameId, testMode) {
+          console.log("Unity Ads Initializing with Game ID:", gameId);
+          this.initialized = true;
+          return Promise.resolve();
+        },
+        show: function(placementId) {
+          console.log("Unity Ads Showing Placement:", placementId);
+          return Promise.resolve();
+        }
+      };
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
